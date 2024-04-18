@@ -41,30 +41,26 @@ namespace music_management
 
         private void button4_Click(object sender, EventArgs e)
         {
-            /*MySqlConnection connection = new MySqlConnection("Server=10.86.4.89;Database=dbs_project;Uid=root;Pwd=root;");
-            MySqlCommand command = connection.CreateCommand();
-            command.CommandText = "SELECT COUNT(*) FROM subscriptions WHERE user_id = @user_id";
-            command.Parameters.AddWithValue("@user_id", user_id);
-
+            string connectionString = "Server=10.86.4.89;Database=dbs_project;Uid=root;Pwd=root;";
+            MySqlConnection connection = new MySqlConnection(connectionString);
             try
             {
                 connection.Open();
-                int count = Convert.ToInt32(command.ExecuteScalar());
-                button4.Visible = count > 0;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
-            finally
-            {
-                if (connection.State == ConnectionState.Open)
+                string query = "SELECT user_id FROM subscriptions WHERE user_id = @user_id";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@user_id", user_id);
+                object result = command.ExecuteScalar();
+                if (result != null)
                 {
-                    connection.Close();
+                    Playlist pl = new Playlist(user_id);
+                    pl.ShowDialog();
                 }
-            }*/
-            Playlist pl = new Playlist(user_id);
-            pl.ShowDialog();
+            }
+            catch (MySqlException ex) 
+            {
+                MessageBox.Show("Error: " + ex.Message);           
+            }
+            finally { connection.Close(); } 
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -81,6 +77,30 @@ namespace music_management
         {
             Listen li = new Listen(user_id);
             li.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string connectionString = "Server=10.86.4.89;Database=dbs_project;Uid=root;Pwd=root;";
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                string query = "SELECT user_id FROM subscriptions WHERE user_id = @user_id";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@user_id", user_id);
+                object result = command.ExecuteScalar();
+                if (result != null)
+                {
+                    Tracks tr = new Tracks(user_id);
+                    tr.ShowDialog();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally { connection.Close(); }    
         }
     }
 }

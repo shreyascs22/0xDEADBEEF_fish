@@ -34,6 +34,7 @@
             button1 = new Button();
             label2 = new Label();
             label3 = new Label();
+            button2 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -51,21 +52,21 @@
             comboBox1.FormattingEnabled = true;
             comboBox1.Location = new Point(101, 116);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 28);
+            comboBox1.Size = new Size(123, 28);
             comboBox1.TabIndex = 1;
             // 
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(367, 121);
+            comboBox2.Location = new Point(339, 118);
             comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(151, 28);
+            comboBox2.Size = new Size(116, 28);
             comboBox2.TabIndex = 2;
             // 
             // button1
             // 
             button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(609, 120);
+            button1.Location = new Point(493, 120);
             button1.Name = "button1";
             button1.Size = new Size(94, 29);
             button1.TabIndex = 3;
@@ -87,17 +88,30 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(295, 124);
+            label3.Location = new Point(267, 121);
             label3.Name = "label3";
             label3.Size = new Size(66, 20);
             label3.TabIndex = 5;
             label3.Text = "TRACKS";
             // 
+            // button2
+            // 
+            button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.Location = new Point(629, 121);
+            button2.Name = "button2";
+            button2.Size = new Size(119, 28);
+            button2.TabIndex = 6;
+            button2.Text = "RECOMMEND";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // Tracks
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(255, 128, 0);
             ClientSize = new Size(800, 450);
+            Controls.Add(button2);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(button1);
@@ -118,5 +132,6 @@
         private Button button1;
         private Label label2;
         private Label label3;
+        private Button button2;
     }
 }
