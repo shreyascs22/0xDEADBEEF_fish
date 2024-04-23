@@ -36,6 +36,11 @@
             label2 = new Label();
             label3 = new Label();
             button5 = new Button();
+            label4 = new Label();
+            comboBox1 = new ComboBox();
+            button6 = new Button();
+            label5 = new Label();
+            button7 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -122,12 +127,69 @@
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(170, 84);
+            label4.Name = "label4";
+            label4.Size = new Size(71, 25);
+            label4.TabIndex = 10;
+            label4.Text = "GENRE";
+            // 
+            // comboBox1
+            // 
+            comboBox1.BackColor = Color.White;
+            comboBox1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(247, 84);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(274, 33);
+            comboBox1.TabIndex = 11;
+            // 
+            // button6
+            // 
+            button6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button6.Location = new Point(551, 88);
+            button6.Name = "button6";
+            button6.Size = new Size(94, 29);
+            button6.TabIndex = 12;
+            button6.Text = "FILTER";
+            button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Location = new Point(323, 141);
+            label5.Name = "label5";
+            label5.Size = new Size(13, 20);
+            label5.TabIndex = 13;
+            label5.Text = " ";
+            // 
+            // button7
+            // 
+            button7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button7.Location = new Point(45, 88);
+            button7.Name = "button7";
+            button7.Size = new Size(94, 29);
+            button7.TabIndex = 14;
+            button7.Text = "EVENTS";
+            button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
+            // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 128, 0);
             ClientSize = new Size(800, 450);
+            Controls.Add(button7);
+            Controls.Add(label5);
+            Controls.Add(button6);
+            Controls.Add(comboBox1);
+            Controls.Add(label4);
             Controls.Add(button5);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -153,5 +215,10 @@
         private Label label2;
         private Label label3;
         private Button button5;
+        private Label label4;
+        private ComboBox comboBox1;
+        private Button button6;
+        private Label label5;
+        private Button button7;
     }
 }

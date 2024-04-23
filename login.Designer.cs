@@ -36,6 +36,8 @@
             button1 = new Button();
             label4 = new Label();
             button2 = new Button();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -117,12 +119,22 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.WhatsApp_Image_2024_04_19_at_00_59_52;
+            pictureBox1.Location = new Point(423, 81);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(365, 201);
+            pictureBox1.TabIndex = 8;
+            pictureBox1.TabStop = false;
+            // 
             // login
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 128, 0);
             ClientSize = new Size(800, 450);
+            Controls.Add(pictureBox1);
             Controls.Add(button2);
             Controls.Add(label4);
             Controls.Add(button1);
@@ -134,6 +146,7 @@
             Name = "login";
             Text = "login";
             Load += login_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -148,5 +161,6 @@
         private Button button1;
         private Label label4;
         private Button button2;
+        private PictureBox pictureBox1;
     }
 }

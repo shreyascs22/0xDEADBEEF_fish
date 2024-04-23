@@ -32,6 +32,8 @@
             comboBox1 = new ComboBox();
             label2 = new Label();
             button1 = new Button();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -57,7 +59,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(74, 163);
+            label2.Location = new Point(58, 163);
             label2.Name = "label2";
             label2.Size = new Size(81, 25);
             label2.TabIndex = 2;
@@ -67,7 +69,7 @@
             // 
             button1.BackColor = Color.White;
             button1.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(494, 167);
+            button1.Location = new Point(447, 167);
             button1.Name = "button1";
             button1.Size = new Size(91, 29);
             button1.TabIndex = 3;
@@ -75,12 +77,22 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click_1;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.WhatsApp_Image_2024_04_19_at_01_00_20;
+            pictureBox1.Location = new Point(447, 214);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(310, 197);
+            pictureBox1.TabIndex = 4;
+            pictureBox1.TabStop = false;
+            // 
             // Listen
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 128, 0);
             ClientSize = new Size(800, 450);
+            Controls.Add(pictureBox1);
             Controls.Add(button1);
             Controls.Add(label2);
             Controls.Add(comboBox1);
@@ -88,6 +100,7 @@
             Name = "Listen";
             Text = "Listen";
             Load += Listen_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -98,5 +111,6 @@
         private ComboBox comboBox1;
         private Label label2;
         private Button button1;
+        private PictureBox pictureBox1;
     }
 }

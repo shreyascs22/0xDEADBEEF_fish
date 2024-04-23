@@ -69,5 +69,25 @@ namespace music_management.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2024_04_19_at_00_59_52 {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2024-04-19 at 00.59.52", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2024_04_19_at_01_00_20 {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2024-04-19 at 01.00.20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

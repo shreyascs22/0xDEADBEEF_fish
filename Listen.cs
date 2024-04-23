@@ -31,7 +31,7 @@ namespace music_management
             comboBox1.Items.Clear();
             trackDictionary.Clear();
 
-            string connectionString = "Server=10.86.4.89;Database=dbs_project;Uid=root;Pwd=root;";
+            string connectionString = "Server=192.168.43.237;Database=dbs_project;Uid=root;Pwd=root;";
             MySqlConnection connection = new MySqlConnection(connectionString);
             MySqlCommand command = connection.CreateCommand();
             command.CommandText = "SELECT track_id, track_name FROM tracks";
@@ -63,7 +63,7 @@ namespace music_management
             {
                 string track_name = comboBox1.SelectedItem.ToString();
                 int track_id = trackDictionary[track_name];
-                string connectionString = "Server=10.86.4.89;Database=dbs_project;Uid=root;Pwd=root;";
+                string connectionString = "Server=192.168.43.237;Database=dbs_project;Uid=root;Pwd=root;";
                 MySqlConnection connection = new MySqlConnection(connectionString);
                 try
                 {

@@ -35,6 +35,8 @@
             label2 = new Label();
             label3 = new Label();
             button2 = new Button();
+            button3 = new Button();
+            label4 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -105,12 +107,34 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // button3
+            // 
+            button3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button3.Location = new Point(541, 177);
+            button3.Name = "button3";
+            button3.Size = new Size(142, 30);
+            button3.TabIndex = 7;
+            button3.Text = "SHOW TRACKS";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Location = new Point(573, 227);
+            label4.Name = "label4";
+            label4.Size = new Size(0, 25);
+            label4.TabIndex = 8;
+            // 
             // Tracks
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 128, 0);
             ClientSize = new Size(800, 450);
+            Controls.Add(label4);
+            Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -120,6 +144,7 @@
             Controls.Add(label1);
             Name = "Tracks";
             Text = "Tracks";
+            Load += Tracks_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -133,5 +158,7 @@
         private Label label2;
         private Label label3;
         private Button button2;
+        private Button button3;
+        private Label label4;
     }
 }

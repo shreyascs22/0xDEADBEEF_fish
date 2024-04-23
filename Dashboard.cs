@@ -26,11 +26,42 @@ namespace music_management
             label3.Text = "UserID: " + user_id.ToString();
             label2.TabStop = false;
             label3.TabStop = false;
+            LoadData();
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void LoadData()
+        {
+            comboBox1.Items.Clear();
+            string connectionString = "Server=192.168.43.237;Database=dbs_project;Uid=root;Pwd=root;";
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            string query = "SELECT genre FROM artists";
+            MySqlCommand command = new MySqlCommand(query, connection);
+            try
+            {
+                connection.Open();
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string value = reader.GetString(0);
+                    comboBox1.Items.Add(value);
+                }
+
+                reader.Close();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -41,7 +72,7 @@ namespace music_management
 
         private void button4_Click(object sender, EventArgs e)
         {
-            string connectionString = "Server=10.86.4.89;Database=dbs_project;Uid=root;Pwd=root;";
+            string connectionString = "Server=192.168.43.237;Database=dbs_project;Uid=root;Pwd=root;";
             MySqlConnection connection = new MySqlConnection(connectionString);
             try
             {
@@ -56,11 +87,11 @@ namespace music_management
                     pl.ShowDialog();
                 }
             }
-            catch (MySqlException ex) 
+            catch (MySqlException ex)
             {
-                MessageBox.Show("Error: " + ex.Message);           
+                MessageBox.Show("Error: " + ex.Message);
             }
-            finally { connection.Close(); } 
+            finally { connection.Close(); }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -81,7 +112,7 @@ namespace music_management
 
         private void button5_Click(object sender, EventArgs e)
         {
-            string connectionString = "Server=10.86.4.89;Database=dbs_project;Uid=root;Pwd=root;";
+            string connectionString = "Server=192.168.43.237;Database=dbs_project;Uid=root;Pwd=root;";
             MySqlConnection connection = new MySqlConnection(connectionString);
             try
             {
@@ -100,7 +131,57 @@ namespace music_management
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
-            finally { connection.Close(); }    
+            finally { connection.Close(); }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedItem != null)
+            {
+                string genre = comboBox1.SelectedItem.ToString();
+                string connectionString = "Server=192.168.43.237;Database=dbs_project;Uid=root;Pwd=root;";
+                MySqlConnection connection = new MySqlConnection(connectionString);
+                try
+                {
+                    connection.Open();
+                    string query = "SELECT track_name FROM tracks WHERE track_id IN (SELECT track_id FROM artist_tracks WHERE artist_id IN (SELECT artist_id FROM artists WHERE genre = @genre))";
+                    MySqlCommand command = new MySqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@genre", genre);
+                    MySqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        StringBuilder sb = new StringBuilder();
+                        while (reader.Read())
+                        {
+                            sb.AppendLine(reader.GetString(0));
+                        }
+                        label5.Text = sb.ToString();
+                    }
+                    else
+                    {
+                        label5.Text = "No tracks found";
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("No genre selected");
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Events ev = new Events(user_id);
+            ev.ShowDialog();
         }
     }
 }

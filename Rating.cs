@@ -30,7 +30,7 @@ namespace music_management
             comboBox1.Items.Clear();
             trackDictionary.Clear();
 
-            MySqlConnection connection = new MySqlConnection("Server=10.86.4.89;Database=dbs_project;Uid=root;Pwd=root;");
+            MySqlConnection connection = new MySqlConnection("Server=192.168.43.237;Database=dbs_project;Uid=root;Pwd=root;");
             MySqlCommand command = connection.CreateCommand();
             command.CommandText = "SELECT track_id, track_name FROM tracks";
 
@@ -71,11 +71,11 @@ namespace music_management
                 int track_id = trackDictionary[track_name];
                 string input = textBox1.Text;
                 int ratings = Convert.ToInt32(input);
-                string connectionString = "Server=10.86.4.89;Database=dbs_project;Uid=root;Pwd=root;";
+                string connectionString = "Server=192.168.43.237;Database=dbs_project;Uid=root;Pwd=root;";
                 MySqlConnection connection = new MySqlConnection(connectionString);
                 string chk = "SELECT * FROM ratings where track_id = @track_id and user_id = @user_id";
                 MySqlCommand command = new MySqlCommand(chk, connection);
-                command.Parameters.AddWithValue("@track_id",track_id);
+                command.Parameters.AddWithValue("@track_id", track_id);
                 command.Parameters.AddWithValue("@user_id", user_id);
                 try
                 {
@@ -118,19 +118,24 @@ namespace music_management
                         }
                     }
                 }
-                catch(MySqlException ex)
+                catch (MySqlException ex)
                 {
                     MessageBox.Show("Error: " + ex.Message);
                 }
-                finally 
-                { 
-                    connection.Close(); 
+                finally
+                {
+                    connection.Close();
                 }
             }
             else
             {
                 MessageBox.Show("Choose a track to rate");
             }
+        }
+
+        private void Rating_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

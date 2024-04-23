@@ -1,0 +1,146 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\codes\\dbs\\music_management\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DFDF6B15-7AA4-4169-8D7A-AB466B2CE1AD}|music_management.csproj|c:\\codes\\dbs\\music_management\\tracks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFDF6B15-7AA4-4169-8D7A-AB466B2CE1AD}|music_management.csproj|solutionrelative:tracks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFDF6B15-7AA4-4169-8D7A-AB466B2CE1AD}|music_management.csproj|C:\\codes\\dbs\\music_management\\tracks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DFDF6B15-7AA4-4169-8D7A-AB466B2CE1AD}|music_management.csproj|solutionrelative:tracks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFDF6B15-7AA4-4169-8D7A-AB466B2CE1AD}|music_management.csproj|C:\\codes\\dbs\\music_management\\subscriptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFDF6B15-7AA4-4169-8D7A-AB466B2CE1AD}|music_management.csproj|solutionrelative:subscriptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFDF6B15-7AA4-4169-8D7A-AB466B2CE1AD}|music_management.csproj|C:\\codes\\dbs\\music_management\\subscriptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DFDF6B15-7AA4-4169-8D7A-AB466B2CE1AD}|music_management.csproj|solutionrelative:subscriptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFDF6B15-7AA4-4169-8D7A-AB466B2CE1AD}|music_management.csproj|C:\\codes\\dbs\\music_management\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFDF6B15-7AA4-4169-8D7A-AB466B2CE1AD}|music_management.csproj|solutionrelative:signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFDF6B15-7AA4-4169-8D7A-AB466B2CE1AD}|music_management.csproj|C:\\codes\\dbs\\music_management\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DFDF6B15-7AA4-4169-8D7A-AB466B2CE1AD}|music_management.csproj|solutionrelative:signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFDF6B15-7AA4-4169-8D7A-AB466B2CE1AD}|music_management.csproj|C:\\codes\\dbs\\music_management\\rating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFDF6B15-7AA4-4169-8D7A-AB466B2CE1AD}|music_management.csproj|solutionrelative:rating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFDF6B15-7AA4-4169-8D7A-AB466B2CE1AD}|music_management.csproj|C:\\codes\\dbs\\music_management\\rating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DFDF6B15-7AA4-4169-8D7A-AB466B2CE1AD}|music_management.csproj|solutionrelative:rating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Tracks.cs",
+              "DocumentMoniker": "C:\\codes\\dbs\\music_management\\Tracks.cs",
+              "RelativeDocumentMoniker": "Tracks.cs",
+              "ToolTip": "C:\\codes\\dbs\\music_management\\Tracks.cs",
+              "RelativeToolTip": "Tracks.cs",
+              "ViewState": "AQIAANsAAAAAAAAAAADwv/AAAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-19T03:57:24.752Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Tracks.cs [Design]",
+              "DocumentMoniker": "C:\\codes\\dbs\\music_management\\Tracks.cs",
+              "RelativeDocumentMoniker": "Tracks.cs",
+              "ToolTip": "C:\\codes\\dbs\\music_management\\Tracks.cs [Design]",
+              "RelativeToolTip": "Tracks.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-19T03:57:23.649Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Subscriptions.cs",
+              "DocumentMoniker": "C:\\codes\\dbs\\music_management\\Subscriptions.cs",
+              "RelativeDocumentMoniker": "Subscriptions.cs",
+              "ToolTip": "C:\\codes\\dbs\\music_management\\Subscriptions.cs",
+              "RelativeToolTip": "Subscriptions.cs",
+              "ViewState": "AQIAACsAAAAAAAAAAAAMwDgAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-19T03:57:10.581Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Subscriptions.cs [Design]",
+              "DocumentMoniker": "C:\\codes\\dbs\\music_management\\Subscriptions.cs",
+              "RelativeDocumentMoniker": "Subscriptions.cs",
+              "ToolTip": "C:\\codes\\dbs\\music_management\\Subscriptions.cs [Design]",
+              "RelativeToolTip": "Subscriptions.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-19T03:57:08.272Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Signup.cs",
+              "DocumentMoniker": "C:\\codes\\dbs\\music_management\\Signup.cs",
+              "RelativeDocumentMoniker": "Signup.cs",
+              "ToolTip": "C:\\codes\\dbs\\music_management\\Signup.cs",
+              "RelativeToolTip": "Signup.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAMwC4AAABEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-19T03:56:45.42Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Signup.cs [Design]",
+              "DocumentMoniker": "C:\\codes\\dbs\\music_management\\Signup.cs",
+              "RelativeDocumentMoniker": "Signup.cs",
+              "ToolTip": "C:\\codes\\dbs\\music_management\\Signup.cs [Design]",
+              "RelativeToolTip": "Signup.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-19T03:56:42.533Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Rating.cs",
+              "DocumentMoniker": "C:\\codes\\dbs\\music_management\\Rating.cs",
+              "RelativeDocumentMoniker": "Rating.cs",
+              "ToolTip": "C:\\codes\\dbs\\music_management\\Rating.cs",
+              "RelativeToolTip": "Rating.cs",
+              "ViewState": "AQIAADoAAAAAAAAAAIAwwEkAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-19T03:56:17.354Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Rating.cs [Design]",
+              "DocumentMoniker": "C:\\codes\\dbs\\music_management\\Rating.cs",
+              "RelativeDocumentMoniker": "Rating.cs",
+              "ToolTip": "C:\\codes\\dbs\\music_management\\Rating.cs [Design]",
+              "RelativeToolTip": "Rating.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-19T03:56:11.007Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

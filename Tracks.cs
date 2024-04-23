@@ -26,7 +26,7 @@ namespace music_management
         private void LoadTracks()
         {
             comboBox2.Items.Clear();
-            string connectionString = "Server=10.86.4.89;Database=dbs_project;Uid=root;Pwd=root;";
+            string connectionString = "Server=192.168.43.237;Database=dbs_project;Uid=root;Pwd=root;";
             MySqlConnection connection = new MySqlConnection(connectionString);
             string query = "SELECT track_name FROM tracks";
             MySqlCommand command = new MySqlCommand(query, connection);
@@ -56,7 +56,7 @@ namespace music_management
         private void LoadPlaylist()
         {
             comboBox1.Items.Clear();
-            string connectionString = "Server=10.86.4.89;Database=dbs_project;Uid=root;Pwd=root;";
+            string connectionString = "Server=192.168.43.237;Database=dbs_project;Uid=root;Pwd=root;";
             MySqlConnection connection = new MySqlConnection(connectionString);
             string query = "SELECT playlist_name FROM playlists WHERE playlist_id IN (SELECT playlist_id FROM user_playlists WHERE user_id = @user_id)";
             MySqlCommand command = new MySqlCommand(query, connection);
@@ -91,11 +91,14 @@ namespace music_management
             {
                 string track_name = comboBox2.SelectedItem.ToString();
                 string playlist_name = comboBox1.SelectedItem.ToString();
-                string connectionString = "Server=10.86.4.89;Database=dbs_project;Uid=root;Pwd=root;";
+                string connectionString = "Server=192.168.43.237;Database=dbs_project;Uid=root;Pwd=root;";
                 MySqlConnection connection = new MySqlConnection(connectionString);
+                MySqlTransaction transaction = null;
                 try
                 {
                     connection.Open();
+                    transaction = connection.BeginTransaction();
+
                     string trackid_query = "SELECT track_id FROM tracks WHERE track_name = @track_name";
                     MySqlCommand track_cmd = new MySqlCommand(trackid_query, connection);
                     track_cmd.Parameters.AddWithValue("@track_name", track_name);
@@ -113,20 +116,24 @@ namespace music_management
                     int rowsAffected = cmd.ExecuteNonQuery();
                     if (rowsAffected > 0)
                     {
+                        transaction.Commit();
                         MessageBox.Show("Form submitted successfully");
                     }
                     else
                     {
+                        transaction.Rollback();
                         MessageBox.Show("Failed to insert data!");
                     }
                 }
                 catch (MySqlException ex)
                 {
                     MessageBox.Show("Database Error: " + ex.Message);
+                    transaction?.Rollback();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error: " + ex.Message);
+                    transaction?.Rollback();
                 }
                 finally
                 {
@@ -144,7 +151,7 @@ namespace music_management
             if (comboBox1.SelectedItem != null)
             {
                 string playlist_name = comboBox1.SelectedItem.ToString();
-                string connectionString = "Server=10.86.4.89;Database=dbs_project;Uid=root;Pwd=root;";
+                string connectionString = "Server=192.168.43.237;Database=dbs_project;Uid=root;Pwd=root;";
                 MySqlConnection connection = new MySqlConnection(connectionString);
                 try
                 {
@@ -194,7 +201,7 @@ namespace music_management
                         MessageBox.Show("Recommended Tracks:\n" + sb.ToString());
                     }
                 }
-                catch (MySqlException ex) 
+                catch (MySqlException ex)
                 {
                     MessageBox.Show("Error: " + ex.Message);
                 }
@@ -204,6 +211,53 @@ namespace music_management
                 }
 
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedItem != null)
+            {
+                string playlist_name = comboBox1.SelectedItem.ToString();
+                string connectionString = "Server=192.168.43.237;Database=dbs_project;Uid=root;Pwd=root;";
+                MySqlConnection connection = new MySqlConnection(connectionString);
+                try
+                {
+                    connection.Open();
+                    string playlistid_query = "SELECT playlist_id FROM playlists WHERE playlist_name = @playlist_name";
+                    MySqlCommand playlistid_cmd = new MySqlCommand(playlistid_query, connection);
+                    playlistid_cmd.Parameters.AddWithValue("@playlist_name", playlist_name);
+                    int playlist_id = Convert.ToInt32(playlistid_cmd.ExecuteScalar());
+
+                    string tracks_query = "SELECT track_name FROM tracks WHERE track_id IN (SELECT track_id FROM track_playlists WHERE playlist_id = @playlist_id)";
+                    MySqlCommand tracks_cmd = new MySqlCommand(tracks_query, connection);
+                    tracks_cmd.Parameters.AddWithValue("@playlist_id", playlist_id);
+                    MySqlDataReader reader = tracks_cmd.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        StringBuilder sb = new StringBuilder();
+                        while (reader.Read())
+                        {
+                            sb.AppendLine(reader.GetString(0));
+                        }
+                        label4.Text = sb.ToString();
+                    }
+                    else
+                    {
+                        label4.Text = "No tracks found for the selected playlist";
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+                finally { connection.Close(); }
+            }
+        }
+
+        private void Tracks_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -44,7 +44,7 @@ namespace music_management
                         MessageBox.Show("PLEASE ENTER YOUR GENDER");
                         return;
                     }
-                    string connectionString = "Server=10.86.4.89;Database=dbs_project;Uid=root;Pwd=root;";
+                    string connectionString = "Server=192.168.43.237;Database=dbs_project;Uid=root;Pwd=root;";
                     MySqlConnection connection = new MySqlConnection(connectionString);
                     try
                     {

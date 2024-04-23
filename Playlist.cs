@@ -28,7 +28,7 @@ namespace music_management
         private void button1_Click(object sender, EventArgs e)
         {
             string playlist_name = textBox1.Text;
-            string connectionString = "Server=10.86.4.89;Database=dbs_project;Uid=root;Pwd=root;";
+            string connectionString = "Server=192.168.43.237;Database=dbs_project;Uid=root;Pwd=root;";
             MySqlConnection connection = new MySqlConnection(connectionString);
             try
             {

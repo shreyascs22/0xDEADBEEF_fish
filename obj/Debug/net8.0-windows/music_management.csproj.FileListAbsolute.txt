@@ -27,3 +27,5 @@ C:\codes\dbs\music_management\obj\Debug\net8.0-windows\music_management.Rating.r
 C:\codes\dbs\music_management\obj\Debug\net8.0-windows\music_management.Listen.resources
 C:\codes\dbs\music_management\obj\Debug\net8.0-windows\music_management.Playlist.resources
 C:\codes\dbs\music_management\obj\Debug\net8.0-windows\music_management.Tracks.resources
+C:\codes\dbs\music_management\obj\Debug\net8.0-windows\music_management.sourcelink.json
+C:\codes\dbs\music_management\obj\Debug\net8.0-windows\music_management.Events.resources
